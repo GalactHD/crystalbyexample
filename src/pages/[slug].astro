@@ -18,7 +18,7 @@ const nextExample = await getEntries(example.data.nextExample);
 const { Content } = await render(example);
 ---
 
-<Page title=`Crystal by example: ${example.data.title}`>
+<Page title=`Crystal by example: ${example.data.title}` description=`Examples for Crystal: ${example.data.title}`>
   <article class="space-y-5 md:px-[13%] lg:px-[25%]">
     <h2><a href="/">Crystal by example</a>: {example.data.title}</h2>
     <Content />
@@ -27,7 +27,7 @@ const { Content } = await render(example);
         <div>
           <span class="kl">Next Example: </span>
           {nextExample.map((next) => (
-            <a class="link" href={next.id} data-astro-prefetch>
+            <a class="link" href={`/${next.id}`} data-astro-prefetch>
               {next.data.title}
             </a>
           ))}

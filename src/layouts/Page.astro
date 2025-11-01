@@ -3,12 +3,18 @@ import '../styles/global.css';
 import '@fontsource-variable/roboto';
 import '@fontsource-variable/roboto-mono';
 import Footer from '../components/Footer.astro';
+import type { ImageMetadata } from 'astro';
+import cr from '@/assets/crystal-icon.png';
 
 interface Props {
   title: string;
+  description: string;
+  image?: ImageMetadata;
 }
 
-const { title } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const { title, description, image = cr } = Astro.props;
 ---
 
 <html lang="en">
@@ -17,7 +23,23 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonicalURL} />
     <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image.src, Astro.url)} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image.src, Astro.url)} />
     <script
       defer
       src="https://cloud.umami.is/script.js"
