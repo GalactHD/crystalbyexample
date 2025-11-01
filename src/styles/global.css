@@ -1,0 +1,36 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Roboto Variable', sans-serif;
+  --font-mono: 'Roboto Mono Variable', monospace;
+}
+
+body {
+  @apply bg-black px-10 py-10;
+}
+
+h1 {
+  @apply text-white font-semibold text-3xl lg:text-4xl font-mono;
+}
+
+h2 {
+  @apply text-white font-semibold text-2xl lg:text-3xl font-mono;
+}
+
+p, span.kl {
+  color: var(--color-neutral-200);
+  @apply text-base md:text-lg;
+}
+
+a {
+  @apply font-mono underline text-neutral-200 hover:text-neutral-50 transition-colors duration-150;
+}
+
+ul {
+  list-style: none;
+  color: var(--color-neutral-200);
+}
+
+div.expressive-code pre {
+  border-radius: 0 !important;
+}

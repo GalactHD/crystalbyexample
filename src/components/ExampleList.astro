@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+
+const examples = await getCollection('examples');
+---
+
+<ul class="p-auto m-auto py-5">
+  {
+    examples
+      .sort((a, b) => a.data.order - b.data.order)
+      .map((example) => (
+        <li>
+          &gt;
+          <a href={`/${example.id}`} data-astro-prefetch>
+            {example.data.title}
+          </a>
+        </li>
+      ))
+  }
+</ul>

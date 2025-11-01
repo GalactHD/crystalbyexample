@@ -1,0 +1,38 @@
+---
+export const prerender = true;
+
+import { getCollection, render } from 'astro:content';
+import Page from '@layouts/Page.astro';
+import { getEntries } from 'astro:content';
+
+export async function getStaticPaths() {
+  const examples = await getCollection('examples');
+  return examples.map((example) => ({
+    params: { slug: example.id },
+    props: { example },
+  }));
+}
+
+const { example } = Astro.props;
+const nextExample = await getEntries(example.data.nextExample);
+const { Content } = await render(example);
+---
+
+<Page title=`Crystal by example: ${example.data.title}`>
+  <article class="space-y-5 md:px-[13%] lg:px-[25%]">
+    <h2><a href="/">Crystal by example</a>: {example.data.title}</h2>
+    <Content />
+    {
+      !example.data.isLast && (
+        <div>
+          <span class="kl">Next Example: </span>
+          {nextExample.map((next) => (
+            <a class="link" href={next.id} data-astro-prefetch>
+              {next.data.title}
+            </a>
+          ))}
+        </div>
+      )
+    }
+  </article>
+</Page>

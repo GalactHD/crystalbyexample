@@ -6,9 +6,16 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "preview:workers": "astro build && pnpx wrangler pages dev ./dist"
   },
   "dependencies": {
-    "astro": "^5.15.2"
+    "@astrojs/cloudflare": "^12.6.10",
+    "@fontsource-variable/roboto": "^5.2.8",
+    "@fontsource-variable/roboto-mono": "^5.2.8",
+    "@tailwindcss/vite": "^4.1.16",
+    "astro": "^5.15.2",
+    "astro-expressive-code": "^0.41.3",
+    "tailwindcss": "^4.1.16"
   }
 }
