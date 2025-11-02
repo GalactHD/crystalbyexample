@@ -2,18 +2,19 @@
 import GitHub from '@/assets/github.svg';
 import Crystal from '@/assets/crystal-icon.svg';
 import Copilot from '@/assets/copilot.svg';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
 
-const baseUrl = Astro.url;
+const t = useTranslations(getLangFromUrl(Astro.url));
 ---
 
 <footer class="flex justify-center pt-5 mb-10">
   <p class="flex items-center gap-5 text-white text-sm">
     <GitHub width={30} height={30} fill="#fff" />
-    <a href="https://github.com/GalactHD/crystalbyexample">Source</a>
+    <a href="https://github.com/GalactHD/crystalbyexample">{t('ft.git')}</a>
     <br />
     <Crystal width={30} height={30} fill="#fff" />
-    <a href="https://crystal-lang.org">Crystal Website</a>
+    <a href="https://crystal-lang.org">{t('ft.cr')}</a>
     <Copilot width={30} height={30} fill="#fff" />
-    <a href=`${baseUrl}llms.txt`>llms.txt</a>
+    <a href=`${Astro.url}llms.txt`>llms.txt</a>
   </p>
 </footer>

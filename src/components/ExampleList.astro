@@ -1,5 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
+import { getLangFromUrl, useTranslatedPath } from '../i18n/utils';
+
+const translatePath = useTranslatedPath(getLangFromUrl(Astro.url));
 
 const examples = await getCollection('examples');
 ---
@@ -11,7 +14,7 @@ const examples = await getCollection('examples');
       .map((example) => (
         <li>
           &gt;
-          <a href={`/${example.id}`} data-astro-prefetch>
+          <a href={translatePath(`/${example.id}`)} data-astro-prefetch>
             {example.data.title}
           </a>
         </li>

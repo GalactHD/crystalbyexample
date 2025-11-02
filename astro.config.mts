@@ -14,6 +14,15 @@ export default defineConfig({
   site: 'https://crystalbyexample.pages.dev',
   output: 'server',
   prefetch: true,
+  i18n: {
+    locales: ['en', 'pt-br'],
+    defaultLocale: 'en',
+    fallback: { 'pt-br': 'en' },
+    routing: {
+      prefixDefaultLocale: false,
+      redirectToDefaultLocale: false,
+    },
+  },
   vite: {
     plugins: [tailwindcss({ optimize: { minify: true } })],
   },

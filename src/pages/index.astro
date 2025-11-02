@@ -1,14 +1,49 @@
 ---
 export const prerender = true;
 
-import Hero from '@components/Hero.astro';
+import Icon from '@/assets/crystal-icon.svg';
 import Page from '@layouts/Page.astro';
 import ExampleList from '@components/ExampleList.astro';
 ---
 
 <Page
-  title="Crystal by Example"
+  title="Crystal by example"
   description="Learn Crystal through practical examples.">
-  <Hero />
+  <section class="s space-y-5 content-center">
+    <Icon
+      width={160}
+      height={200}
+      fill="#fff"
+      class="flex content-center items-center justify-center"
+    />
+
+    <h1 class="pb-5">[Crystal by example]</h1>
+    <p class="text-balance">
+      Crystal is a high level general propouse programming language with a
+      simple syntax of a script language, but with the power of scalable
+      programming languages.
+      <p>
+        This website has some examples for helping people to learning Crystal,
+        the examples explain how Crystal works for beginners or experient
+        programmers that want to learn new things in the programming world. The
+        list of examples has all content needed to use Crystal for projects.
+      </p>
+      <p>
+        If you want to learn more about Crystal, check the <a
+          href="https://crystal-lang.org/docs">documentation</a
+        >. This website guides use the latest stable Crystal version.
+      </p>
+    </p>
+    <h2>[List of examples]</h2>
+  </section>
+
   <ExampleList />
 </Page>
+
+<style>
+  @import 'tailwindcss';
+
+  section p {
+    @apply lg:max-w-[60%];
+  }
+</style>

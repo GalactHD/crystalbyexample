@@ -1,0 +1,49 @@
+---
+export const prerender = true;
+
+import Icon from '@/assets/crystal-icon.svg';
+import Page from '@layouts/Page.astro';
+import ExampleList from '@components/ExampleList.astro';
+---
+
+<Page
+  title="Crystal em exemplos"
+  description="Aprenda Crystal com exemplos práticos.">
+  <section class="s space-y-5 content-center">
+    <Icon
+      width={160}
+      height={200}
+      fill="#fff"
+      class="flex content-center items-center justify-center"/>
+
+    <h1 class="pb-5">[Crystal em exemplos]</h1>
+    <p class="text-balance">
+      Crystal é uma linguagem de proposíto geral de alto nivel, com uma sintaxe
+      simples igual como uma linguagem de script, mas com o poser de linguagens
+      de programação escalaveis.
+      <p>
+        Esse site tem alguns exemplos para ajudar as pessoas a aprenderem sobre
+        a linguagem Crystal, os exemplos explicam como Crystal funciona para
+        iniciantes ou programadores experientes que querem aprender novas coisas
+        no mundo da programação. A lista de exemplos tem contéudo necessário
+        para usar em projetos feitos em Crystal.
+      </p>
+      <p>
+        Se você quiser aprender mais sobre, leia a <a
+          href="https://crystal-lang.org/docs">documentação</a
+        >. Esse site usa uma versão estavel do Crystal para os exemplos.
+      </p>
+    </p>
+    <h2>[Lista de exemplos]</h2>
+  </section>
+
+  <ExampleList />
+</Page>
+
+<style>
+  @import 'tailwindcss';
+
+  section p {
+    @apply lg:max-w-[60%];
+  }
+</style>
