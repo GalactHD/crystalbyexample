@@ -15,21 +15,23 @@ export default defineConfig({
   output: 'server',
   prefetch: true,
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss({ optimize: { minify: true } })],
   },
-  integrations: [expressiveCode({
-    themes: ['min-dark'],
-    frames: {
-      showCopyToClipboardButton: false,
-    },
-    styleOverrides: {
-      codeFontFamily: 'Roboto Mono Variable, monospace',
-      codeFontSize: '0.95rem',
+  integrations: [
+    expressiveCode({
+      themes: ['min-dark'],
       frames: {
-        shadowColor: 'box-shadow: none',
+        showCopyToClipboardButton: false,
       },
-    },
-  }), metaTags()],
-
+      styleOverrides: {
+        codeFontFamily: 'Roboto Mono Variable, monospace',
+        codeFontSize: '0.95rem',
+        frames: {
+          shadowColor: 'box-shadow: none',
+        },
+      },
+    }),
+    metaTags(),
+  ],
   adapter: cloudflare(),
 });

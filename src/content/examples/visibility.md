@@ -1,6 +1,6 @@
 ---
 title: Visibility
-order: 12
+order: 13
 nextExample:
   - enums
 ---

@@ -1,6 +1,6 @@
 ---
 title: Arrays
-order: 7
+order: 8
 nextExample:
   - methods
 ---

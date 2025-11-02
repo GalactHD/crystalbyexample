@@ -1,6 +1,9 @@
 ---
 import GitHub from '@/assets/github.svg';
 import Crystal from '@/assets/crystal-icon.svg';
+import Copilot from '@/assets/copilot.svg';
+
+const baseUrl = Astro.url;
 ---
 
 <footer class="flex justify-center pt-5 mb-10">
@@ -10,5 +13,7 @@ import Crystal from '@/assets/crystal-icon.svg';
     <br />
     <Crystal width={30} height={30} fill="#fff" />
     <a href="https://crystal-lang.org">Crystal Website</a>
+    <Copilot width={30} height={30} fill="#fff" />
+    <a href=`${baseUrl}llms.txt`>llms.txt</a>
   </p>
 </footer>

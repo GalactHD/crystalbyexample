@@ -1,6 +1,6 @@
 ---
 title: Enums
-order: 13
+order: 14
 nextExample:
   - generics
 ---

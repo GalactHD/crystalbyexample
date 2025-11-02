@@ -1,6 +1,6 @@
 ---
 title: Methods
-order: 8
+order: 9
 nextExample:
   - classes
 ---
