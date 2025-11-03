@@ -9,6 +9,8 @@ import cloudflare from '@astrojs/cloudflare';
 
 import metaTags from 'astro-meta-tags';
 
+import sitemap from '@astrojs/sitemap';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://crystalbyexample.pages.dev',
@@ -17,10 +19,10 @@ export default defineConfig({
   i18n: {
     locales: ['en', 'pt-br'],
     defaultLocale: 'en',
-    fallback: { 'pt-br': 'en' },
+    //fallback: { 'pt-br': 'en' },
     routing: {
       prefixDefaultLocale: false,
-      redirectToDefaultLocale: false,
+      redirectToDefaultLocale: true,
     },
   },
   vite: {
@@ -41,6 +43,9 @@ export default defineConfig({
       },
     }),
     metaTags(),
+    sitemap({
+      i18n: { defaultLocale: 'en', locales: { en: 'en-US', 'pt-br': 'pt-BR' } },
+    }),
   ],
   adapter: cloudflare(),
 });

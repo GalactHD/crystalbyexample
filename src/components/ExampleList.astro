@@ -5,6 +5,7 @@ import { getLangFromUrl, useTranslatedPath } from '../i18n/utils';
 const translatePath = useTranslatedPath(getLangFromUrl(Astro.url));
 
 const examples = await getCollection('examples');
+const concepts = await getCollection('concepts');
 ---
 
 <ul class="p-auto m-auto py-5">
