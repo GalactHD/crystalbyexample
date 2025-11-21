@@ -11,6 +11,8 @@ import metaTags from 'astro-meta-tags';
 
 import sitemap from '@astrojs/sitemap';
 
+import mdx from '@astrojs/mdx';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://crystalbyexample.pages.dev',
@@ -26,7 +28,8 @@ export default defineConfig({
     },
   },
   vite: {
-    plugins: [tailwindcss({ optimize: { minify: true } })],
+    plugins: [tailwindcss()],
+    assetsInclude: ['**/*.cr'],
   },
   integrations: [
     expressiveCode({
@@ -46,6 +49,7 @@ export default defineConfig({
     sitemap({
       i18n: { defaultLocale: 'en', locales: { en: 'en-US', 'pt-br': 'pt-BR' } },
     }),
+    mdx(),
   ],
   adapter: cloudflare(),
 });
