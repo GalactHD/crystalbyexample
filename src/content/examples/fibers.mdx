@@ -1,9 +1,11 @@
 ---
 title: Fibers
-order: 16
+order: 18
 nextExample:
   - channels
 ---
+import { Code } from 'astro-expressive-code/components'
+import { loadCode } from '../../utils/load-code'
 
 A Fiber is a lightweight unit of execution managed by Crystal, similar to a thread, but cooperative and controlled by the language’s own scheduler. Fibers can be created using `spawn`.
 
@@ -13,29 +15,7 @@ The `sum` method remains synchronous with the standard execution, but when calle
 
 `Fiber.yield` provides a cooperative pause in the current fiber, allowing other fibers to run, but it does not directly control how long each fiber will execute.
 
-```crystal
-def sum(a, b)
-  a + b
-end
-
-spawn do
-  puts "Fiber 1!"
-end
-
-spawn do
-  puts sum(5, 5)
-end
-
-spawn do
-  5.times do |i|
-    puts i
-  end
-end
-
-puts "The main thread"
-
-Fiber.yield
-```
+<Code lang='crystal' code={await loadCode('fibers')}/>
 
 ```
 $ crystal run fibers.cr

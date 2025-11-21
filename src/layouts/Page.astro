@@ -21,14 +21,17 @@ const { title, description, image = cr } = Astro.props;
 <html lang={getLangFromUrl(Astro.url)}>
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="any" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <link rel="canonical" href={canonicalURL} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="google-site-verification" content="OQn8sGK9YORSqdzWicConN-P4dQL8iqUe9EnQEMEVio"/>
+    <meta
+      name="google-site-verification"
+      content="OQn8sGK9YORSqdzWicConN-P4dQL8iqUe9EnQEMEVio"
+    />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />

@@ -1,0 +1,28 @@
+---
+title: Visibility
+order: 14
+nextExample:
+  - enums
+---
+import { Code } from 'astro-expressive-code/components'
+import { loadCode } from '../../utils/load-code'
+
+Visibility in programming is a simple concept: controlling what should be public or private.
+
+In Crystal, methods, variables, constants, and classes are public by default, meaning all files in the project have access to them. To change this, you need to use visibility modifiers such as `private` and `protected`.
+
+In the example, the secret recipe method is private, it can only be accessed by methods, variables, or any other structure within the same module. The sausage-making method, on the other hand, is public and can be called normally from outside.
+
+`private` can also be used with classes, constants, and properties.
+
+The `protected` modifier is used for methods that can only be accessed within the same class or its subclasses, allowing controlled communication between related types.
+
+<Code lang='crystal' code={await loadCode('visibility')}/>
+
+```
+$ crystal run visibility.cr
+
+Some sausage
+X: 1 Y: 2
+5.0
+```

@@ -4,18 +4,14 @@ order: 2
 nextExample:
   - variables
 ---
+import { Code } from 'astro-expressive-code/components'
+import { loadCode } from '../../utils/load-code'
 
 Values are an important concept in programming, and in Crystal it is no different.
 
 The main values in Crystal are strings, chars, integers, floats, and booleans. There are others, but these are more specific; these main values are called primitive types.
 
-```crystal
-puts "My string"
-puts 'λ'
-puts true && false
-puts 77 + 33
-puts 3.145 * 2
-```
+<Code lang='crystal' code={await loadCode('values')}/>
 
 ```
 $ crystal run values.cr
