@@ -2,9 +2,6 @@ r = -> { 1 + 1 }
 
 puts r.call
 
-pow2 = ->(n : Int32) { n ** 2 }
+pow = ->(n : Int32, pow : Int32) { n ** pow }
 
-puts pow2.call(5)
-
-sum ->(a : Int32, b : Int32) { a + b }
-puts sum.call(77, 33)
+puts pow.call(5, 2)
