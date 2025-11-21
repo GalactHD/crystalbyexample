@@ -4,9 +4,13 @@
  * @returns {Promise<string>}
  */
 export const loadCode = async (example) => {
-  const response = await fetch(`http://localhost:4321/code/${example.toLowerCase()}.cr`);
+  const response = await fetch(
+    `https://crystalbyexample.pages.dev/code/${example.toLowerCase()}.cr`
+  );
   if (!response.ok)
     throw new Error(`Failed to load! Status: ${response.status}`);
 
   return await response.text();
 };
+
+console.log(process.env.NODE_ENV);
