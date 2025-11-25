@@ -8,13 +8,26 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 ---
 
 <footer class="flex justify-center pt-5 mb-10">
-  <p class="flex items-center gap-5 text-white text-sm">
-    <GitHub width={30} height={30} fill="#fff" />
-    <a href="https://github.com/GalactHD/crystalbyexample">{t('ft.git')}</a>
-    <br />
-    <Crystal width={30} height={30} fill="#fff" />
-    <a href="https://crystal-lang.org">{t('ft.cr')}</a>
-    <Copilot width={30} height={30} fill="#fff" />
-    <a href=`${Astro.url}llms.txt`>llms.txt</a>
-  </p>
+  <div class="flex flex-row items-center gap-6 md:gap-8 flex-wrap justify-center text-white text-sm">
+    <a
+      href="https://github.com/GalactHD/crystalbyexample"
+      class="flex items-center gap-2 hover:opacity-80 transition">
+      <GitHub width={30} height={30} fill="#fff" />
+      <span>{t('ft.git')}</span>
+    </a>
+
+    <a
+      href="https://crystal-lang.org"
+      class="flex items-center gap-2 hover:opacity-80 transition text-nowrap">
+      <Crystal width={30} height={30} fill="#fff" />
+      <span>{t('ft.cr')}</span>
+    </a>
+
+    <a
+      href={`${Astro.url}llms.txt`}
+      class="flex items-center gap-2 hover:opacity-80 transition">
+      <Copilot width={30} height={30} fill="#fff" />
+      <span>llms.txt</span>
+    </a>
+  </div>
 </footer>

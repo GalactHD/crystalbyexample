@@ -17,7 +17,8 @@ h2 {
   @apply text-white font-semibold text-2xl lg:text-3xl font-mono;
 }
 
-p, span.kl {
+p,
+span.kl {
   color: var(--color-neutral-200);
   @apply text-base md:text-lg;
 }
@@ -33,4 +34,10 @@ ul {
 
 div.expressive-code pre {
   border-radius: 0 !important;
+}
+
+p code {
+  margin: 2px;
+  padding: 2px;
+  @apply bg-neutral-900;
 }

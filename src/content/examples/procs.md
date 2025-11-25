@@ -1,9 +1,10 @@
 ---
 title: Procs
-order: 10
+order: 11
 nextExample:
   - classes
 ---
+
 import { Code } from 'astro-expressive-code/components'
 import { loadCode } from '../../utils/load-code'
 
@@ -11,7 +12,15 @@ Procs (or closures) are anonymous functions that are stored in variables. They w
 
 Procs accept parameters, but the types must be explicitly specified, which increases safety.
 
-<Code lang='crystal' code={await loadCode('procs')}/>
+```crystal
+r = -> { 1 + 1 }
+
+puts r.call
+
+pow = ->(n : Int32, pow : Int32) { n ** pow }
+
+puts pow.call(5, 2)
+```
 
 ```
 $ crystal run procs.cr

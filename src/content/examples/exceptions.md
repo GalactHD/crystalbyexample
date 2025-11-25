@@ -12,7 +12,26 @@ Errors are a fundamental part of software development and are important for diag
 
 In Crystal, errors can be raised using the `raise` keyword, which immediately stops the program when the error occurs. They support both messages and classes that inherit from the `Exception` class.
 
-<Code lang='crystal' code={await loadCode('exceptions')}/>
+```crystal
+loop do
+  input = gets
+
+  case input
+  when nil
+    break
+  when ""
+    puts "Insert somenthing!"
+  else
+    if input.chomp == "hi"
+      raise "Cannot say hi"
+    elsif input == "hello"
+      raise "Cannot say hello"
+    else
+      puts "bonjur"
+    end
+  end
+end
+```
 
 ```
 $ crystal run exceptions.cr

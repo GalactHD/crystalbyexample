@@ -11,7 +11,13 @@ Values are an important concept in programming, and in Crystal it is no differen
 
 The main values in Crystal are strings, chars, integers, floats, and booleans. There are others, but these are more specific; these main values are called primitive types.
 
-<Code lang='crystal' code={await loadCode('values')}/>
+```crystal
+puts "My string"
+puts 'λ'
+puts true && false
+puts 77 + 33
+puts 3.145 * 2
+```
 
 ```
 $ crystal run values.cr

@@ -1,6 +1,6 @@
 ---
 title: Methods
-order: 9
+order: 10
 nextExample:
   - procs
 ---
@@ -20,7 +20,34 @@ Arguments or parameters are a way to pass data to a function, and in Crystal, me
 Methods can return values. In Crystal, this is done using `return`, or you can place the value as the last expression in the method, which has the same effect.
 
 
-<Code lang='crystal' code={await loadCode('methods')}/>
+```crystal
+def hello
+  puts "Hello, World!"
+end
+
+hello
+
+def hello(name)
+  puts "Hello, #{name}"
+  return name
+end
+
+saudation = hello("Ricardo")
+puts saudation
+
+def is_even?(num)
+  if num % 2 == 0
+    puts "Is even!"
+  else
+    puts "Is odd!"
+  end
+
+  num
+end
+
+my_number_is_even = is_even?(4)
+puts my_number_is_even
+```
 
 ```
 $ crystal run methods.cr

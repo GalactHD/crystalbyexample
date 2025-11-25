@@ -12,7 +12,9 @@ A Hello World in Crystal is simple, just use the `puts` method to print a string
 
 You can use the crystal compiler `crystal run` to run code directly, or compile and running with the `crystal build` command.
 
-<Code lang='crystal' code={await loadCode('hello-world')}/>
+```crystal
+puts "Hello, World!"
+```
 
 ```
 $ crystal run hello-world.cr

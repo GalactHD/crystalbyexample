@@ -15,7 +15,29 @@ The `sum` method remains synchronous with the standard execution, but when calle
 
 `Fiber.yield` provides a cooperative pause in the current fiber, allowing other fibers to run, but it does not directly control how long each fiber will execute.
 
-<Code lang='crystal' code={await loadCode('fibers')}/>
+```crystal
+def sum(a, b)
+  a + b
+end
+
+spawn do
+  puts "Fiber 1!"
+end
+
+spawn do
+  puts sum(5, 5)
+end
+
+spawn do
+  5.times do |i|
+    puts i
+  end
+end
+
+puts "The main thread"
+
+Fiber.yield
+```
 
 ```
 $ crystal run fibers.cr

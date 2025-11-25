@@ -5,8 +5,6 @@ isLast: true
 nextExample:
   - nothing
 ---
-import { Code } from 'astro-expressive-code/components'
-import { loadCode } from '../../utils/load-code'
 
 Channels in Crystal provide a safe and convenient way to send data between fibers without worrying about shared resources or race conditions.
 
@@ -16,7 +14,35 @@ For sending data, use `send`, and for receiving data, use `receive` on the Chann
 
 Unbuffered channels block the sending fiber until another fiber receives the message, while buffered channels allow multiple messages to be stored without immediately blocking, up to the buffer’s capacity.
 
-<Code lang='crystal' code={await loadCode('channels')}/>
+```crystal
+ch = Channel(String).new
+
+spawn do
+  ch.send("Message 1")
+end
+
+message = ch.receive
+puts "Normal channel received: #{message}"
+
+buff_channel = Channel(String).new(2)
+
+spawn do
+  ["Hello", "World", "Fiber!"].each do |msg|
+    puts "Sending: #{msg}"
+    buff_channel.send(msg)
+    puts "Sent: #{msg}"
+  end
+end
+
+spawn do
+  3.times do
+    message = buff_channel.receive
+    puts "Buffered channel received: #{message}"
+  end
+end
+
+sleep 1.second
+```
 
 ```
 $ crystal run channels.cr

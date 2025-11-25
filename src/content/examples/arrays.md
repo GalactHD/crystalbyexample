@@ -2,10 +2,8 @@
 title: Arrays
 order: 8
 nextExample:
-  - methods
+  - hash-maps
 ---
-import { Code } from 'astro-expressive-code/components'
-import { loadCode } from '../../utils/load-code'
 
 Arrays are a data structure that hold ordered elements and organize them with zero-based indexing.
 
@@ -19,7 +17,27 @@ Empty arrays need to have explicit types, whether they are strings or integers; 
 
 To access the number of elements in the array, you can use `.size`.
 
-<Code lang='crystal' code={await loadCode('arrays')}/>
+```crystal
+planets = ["Mercury", "Venus"]
+
+puts typeof(planets)
+
+planets << "Earth"
+planets << "Mars"
+planets.push("Ceres")
+
+puts planets
+puts planets[0]
+
+constants = [] of Float32 | Int32
+
+constants << 3.145
+constants.push(2.718)
+constants.push(1)
+
+puts constants.size
+puts constants
+```
 
 ```
 $ crystal run arrays.cr

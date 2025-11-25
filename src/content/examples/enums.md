@@ -17,7 +17,39 @@ Enums have values and are numbered starting from 0. The default value of a const
 
 Enums accept the use of both symbols and constants, but this only works in certain cases, such as in methods.
 
-<Code lang='crystal' code={await loadCode('enums')}/>
+```crystal
+enum Status
+  Ok
+  Warning
+  Error
+end
+
+s = Status::Ok
+puts s.value
+
+case s
+when Status::Ok
+  puts "status ok"
+when Status::Warning
+  puts "warning"
+when Status::Error
+  puts "err!"
+end
+
+enum PlayerState : UInt32
+  Alive = 1
+  Dead
+end
+
+puts PlayerState::Dead.value
+
+def check_state(state : PlayerState)
+  puts "Player is: #{state}"
+end
+
+check_state PlayerState::Alive
+check_state :dead
+```
 
 ```
 $ crystal run enums.cr
