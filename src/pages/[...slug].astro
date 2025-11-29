@@ -1,0 +1,68 @@
+---
+import { getCollection, render } from 'astro:content';
+import Page from '@layouts/Page.astro';
+import { getEntries } from 'astro:content';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+
+const t = useTranslations(getLangFromUrl(Astro.url));
+
+const buildHref = (currentLang: string, nextId: string) => {
+  const pageSlug = nextId
+    .split('/')
+    .at(-1)!
+    .replace(/\.(md|mdx)$/, '');
+
+  return currentLang === 'en' ? `/${pageSlug}` : `/${currentLang}/${pageSlug}`;
+};
+
+export function parseContentId(id: string) {
+  const parts = id.replace(/\.(md|mdx)$/, '').split('/');
+  const isLocalized = parts.length > 1;
+  const lang = isLocalized ? parts[0] : 'en';
+  const pageSlug = parts.at(-1)!;
+
+  return { lang, pageSlug };
+}
+
+export async function getStaticPaths() {
+  const allExamples = await getCollection('examples');
+
+  return allExamples.map((example) => {
+    const { lang, pageSlug } = parseContentId(example.id);
+
+    const urlSlug = lang === 'en' ? pageSlug : `${lang}/${pageSlug}`;
+
+    return {
+      params: { slug: urlSlug },
+      props: { example, lang },
+    };
+  });
+}
+const { example } = Astro.props;
+const nextExample = await getEntries(example.data.nextExample);
+const { Content } = await render(example);
+---
+
+<Page
+  title=`Crystal by example: ${example.data.title}`
+  description=`Examples for Crystal: ${example.data.title}`>
+  <article class="space-y-5 md:px-[13%] lg:px-[25%]">
+    <h2><a href="/">Crystal by example</a>: {example.data.title}</h2>
+    <Content />
+    {
+      !example.data.isLast && (
+        <div>
+          <span class="kl">{t('ex.next')}: </span>
+          {nextExample.map((next) => (
+            <a
+              class="link"
+              href={buildHref(Astro.currentLocale!, next.id)}
+              data-astro-prefetch>
+              {next.data.title}
+            </a>
+          ))}
+        </div>
+      )
+    }
+  </article>
+</Page>
