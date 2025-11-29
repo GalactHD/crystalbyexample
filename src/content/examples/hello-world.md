@@ -4,9 +4,9 @@ order: 1
 nextExample:
   - values
 ---
-A Hello World in Crystal is simple, just use the `puts` method to print a string in the console.
+A Hello World in Crystal is simple, just use the `puts` method to print values in the console.
 
-You can use the crystal compiler `crystal run` to run code directly, or compile and running with the `crystal build` command.
+You can use the Crystal compiler `crystal run` to run code directly, or compile and running with the `crystal build` command.
 
 ```crystal
 puts "Hello, World!"
