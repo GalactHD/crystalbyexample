@@ -4,6 +4,7 @@ order: 14
 nextExample:
   - generics
 ---
+
 Enums are a group of named constants.
 
 To access a constant from an enum, use the scope resolution operator `::`, and to access the value of that constant, use `.value`.
@@ -13,6 +14,8 @@ To change the type of the enum’s value, which is `Int32` by default, it is onl
 Enums have values and are numbered starting from 0. The default value of a constant in the enum can be changed, and all subsequent constants in order will be updated accordingly.
 
 Enums accept the use of both symbols and constants, but this only works in certain cases, such as in methods.
+
+Enums can have methods, because enums are just a class (like everthing on Crystal)
 
 ```crystal
 enum Status
@@ -33,19 +36,35 @@ when Status::Error
   puts "err!"
 end
 
-enum PlayerState : UInt32
-  Alive = 1
+enum Why
+  Has = 1
+  None
+end
+
+puts Why::None.value
+
+def why_none(opt : Why)
+  case opt
+  when Why::Has then puts "why: has"
+  when Why::None then puts "why: none"
+  end
+end
+
+why_none :Has
+
+enum PlayerState
+  Alive
   Dead
+
+  def check_state()
+    case self
+    when .alive? then puts "Player is alive!"
+    when .dead? then puts "Player is not alive!"
+    end
+  end
 end
 
-puts PlayerState::Dead.value
-
-def check_state(state : PlayerState)
-  puts "Player is: #{state}"
-end
-
-check_state PlayerState::Alive
-check_state :dead
+PlayerState::Alive.check_state()
 ```
 
 ```
@@ -54,6 +73,6 @@ $ crystal run enums.cr
 0
 status ok
 2
-Player is: Alive
-Player is: Dead
+why: has
+Player is alive!
 ```
