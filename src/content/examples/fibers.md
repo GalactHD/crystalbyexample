@@ -4,13 +4,13 @@ order: 18
 nextExample:
   - channels
 ---
-A Fiber is a lightweight unit of execution managed by Crystal, similar to a thread, but cooperative and controlled by the language’s own scheduler. Fibers can be created using `spawn`.
+A Fiber is a lightweight unit of execution in Crystal, kind of like a thread, but cooperative and managed by Crystal scheduler. You can create fibers using `spawn`.
 
-Fibers run cooperatively, allowing multiple tasks to progress without blocking the main program. The execution order between fibers is not guaranteed; the scheduler decides when each fiber runs.
+Fibers take turns running, so multiple tasks can make progress without stopping the whole program. The scheduler decides the order they run in, so it’s not guaranteed.
 
-The `sum` method remains synchronous with the standard execution, but when called inside a fiber, its execution happens within the fiber and is managed by the scheduler, allowing other fibers to run concurrently.
+The `sum` method or any other method still runs normally inside a fiber. It doesn’t become asynchronous, but the fiber can give other fibers a chance to run at the same time.
 
-`Fiber.yield` provides a cooperative pause in the current fiber, allowing other fibers to run, but it does not directly control how long each fiber will execute.
+`Fiber.yield` lets the current fiber pause its turn and let other fibers run. It doesn’t sleep for a fixed time and doesn’t promise exactly when the fiber will run again. It’s just a friendly way of telling the scheduler that someone else can go now.
 
 ```crystal
 def sum(a, b)
