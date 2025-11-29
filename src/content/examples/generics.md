@@ -4,9 +4,6 @@ order: 15
 nextExample:
   - exceptions
 ---
-import { Code } from 'astro-expressive-code/components'
-import { loadCode } from '../../utils/load-code'
-
 Generics are used to provide flexity and security to code. 
 
 In Crystal programming language, generics make classes, modules, structs, and methods more reusable. By using generics, you can design structures that can handle multiple types. 

@@ -4,9 +4,6 @@ order: 14
 nextExample:
   - generics
 ---
-import { Code } from 'astro-expressive-code/components'
-import { loadCode } from '../../utils/load-code'
-
 Enums are a group of named constants.
 
 To access a constant from an enum, use the scope resolution operator `::`, and to access the value of that constant, use `.value`.

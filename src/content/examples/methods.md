@@ -4,9 +4,6 @@ order: 10
 nextExample:
   - procs
 ---
-import { Code } from 'astro-expressive-code/components'
-import { loadCode } from '../../utils/load-code'
-
 Methods (or functions) are a way to reuse code, avoiding the repetition of logic and consequently making programming simpler.
 
 In Crystal, methods are declared with `def` and ended with `end`, and parentheses are optional.

@@ -4,7 +4,6 @@ order: 9
 nextExample:
   - methods
 ---
-
 Hash Maps, hashes, dictionaries, or maps are key–value data structures, where the key represents a name or address that points to a value. In Crystal, this structure is called a Hash Map.
 
 Values can be retrieved using `name["key"]`.

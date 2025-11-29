@@ -4,7 +4,6 @@ order: 6
 nextExample:
   - loops
 ---
-
 `case` is a flow control structure based on conditions. This structure allows writing multiple conditions without using multiple `if`s, which makes the code cleaner.
 
 `case` has the `when`, which gives the condition; if it is true, the code is executed. The `else` comes at the end in case none of the conditions are true.

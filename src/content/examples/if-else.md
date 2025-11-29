@@ -4,10 +4,6 @@ order: 5
 nextExample:
   - loops
 ---
-
-import { Code } from 'astro-expressive-code/components'
-import { loadCode } from '../../utils/load-code'
-
 The `if` and `else` structures are conditional structures; they check whether a value is true or false and execute code based on that. Crystal has `if`, `else`, and `unless` to handle conditions.
 
 The `if` and `unless` structures do not depend on `else`, which means you don’t need to use `else` every time.

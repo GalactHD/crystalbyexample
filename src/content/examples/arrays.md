@@ -4,7 +4,6 @@ order: 8
 nextExample:
   - hash-maps
 ---
-
 Arrays are a data structure that hold ordered elements and organize them with zero-based indexing.
 
 Crystal arrays can hold multiple types at once, and these arrays are mutable. Arrays in Crystal are generic, meaning they can accept various types. It is possible to check which types are present using `typeof`, which will display in the console the types that make up the array.

@@ -4,9 +4,6 @@ order: 7
 nextExample:
   - arrays
 ---
-import { Code } from 'astro-expressive-code/components'
-import { loadCode } from '../../utils/load-code'
-
 Loops, iterations, or repetition structures are a programming concept that allows a block of code to be repeated based on boolean conditions (true or false). They are part of the control flow in many programs.
 
 In Crystal, there are several ways to create loops, such as using `while`, `until`, `loop`, and `each`. Crystal does not have a `for` structure like other languages, but there are alternatives.

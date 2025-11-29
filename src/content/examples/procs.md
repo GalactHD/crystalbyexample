@@ -4,10 +4,6 @@ order: 11
 nextExample:
   - classes
 ---
-
-import { Code } from 'astro-expressive-code/components'
-import { loadCode } from '../../utils/load-code'
-
 Procs (or closures) are anonymous functions that are stored in variables. They work just like methods: they can accept parameters, return values, and perform modifications.
 
 Procs accept parameters, but the types must be explicitly specified, which increases safety.

@@ -4,10 +4,6 @@ order: 13
 nextExample:
   - visibility
 ---
-
-import { Code } from 'astro-expressive-code/components'
-import { loadCode } from '../../utils/load-code'
-
 Modules in Crystal are used to organize code and share functionality. They can contain methods, constants, and types, but they cannot be instantiated.
 
 Using modules as namespaces is simple—use the `::` operator to access what is inside the module.

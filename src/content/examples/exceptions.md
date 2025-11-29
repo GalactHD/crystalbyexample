@@ -4,10 +4,6 @@ order: 16
 nextExample:
   - custom-exceptions
 ---
-import { Code } from 'astro-expressive-code/components'
-import { loadCode } from '../../utils/load-code'
-
-
 Errors are a fundamental part of software development and are important for diagnosing problems. They should not be avoided, they should be used to solve a problem.
 
 In Crystal, errors can be raised using the `raise` keyword, which immediately stops the program when the error occurs. They support both messages and classes that inherit from the `Exception` class.

@@ -4,10 +4,6 @@ order: 14
 nextExample:
   - enums
 ---
-
-import { Code } from 'astro-expressive-code/components'
-import { loadCode } from '../../utils/load-code'
-
 Visibility in programming is a simple concept: controlling what should be public or private.
 
 In Crystal, methods, variables, constants, and classes are public by default, meaning all files in the project have access to them. To change this, you need to use visibility modifiers such as `private` and `protected`.

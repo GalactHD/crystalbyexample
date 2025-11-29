@@ -4,9 +4,6 @@ order: 18
 nextExample:
   - channels
 ---
-import { Code } from 'astro-expressive-code/components'
-import { loadCode } from '../../utils/load-code'
-
 A Fiber is a lightweight unit of execution managed by Crystal, similar to a thread, but cooperative and controlled by the language’s own scheduler. Fibers can be created using `spawn`.
 
 Fibers run cooperatively, allowing multiple tasks to progress without blocking the main program. The execution order between fibers is not guaranteed; the scheduler decides when each fiber runs.

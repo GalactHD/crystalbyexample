@@ -4,9 +4,6 @@ order: 12
 nextExample:
   - modules
 ---
-import { Code } from 'astro-expressive-code/components'
-import { loadCode } from '../../utils/load-code'
-
 Structs in Crystal are similar to classes, but they are allocated on the stack, which is a fast-access memory area, making them "lighter" than classes.
 
 Structs can only inherit from structs marked as abstract. Abstract structs cannot be instantiated directly and only serve as a base for other structs.

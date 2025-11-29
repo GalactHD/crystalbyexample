@@ -4,9 +4,6 @@ order: 3
 nextExample:
   - constants
 ---
-import { Code } from 'astro-expressive-code/components'
-import { loadCode } from '../../utils/load-code'
-
 Variables is a way in programming that allows to store data, in Crystal, variables are straightfoward, only requires the name and value.
 
 And the language automatically infers the type.

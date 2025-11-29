@@ -4,9 +4,6 @@ order: 2
 nextExample:
   - variables
 ---
-import { Code } from 'astro-expressive-code/components'
-import { loadCode } from '../../utils/load-code'
-
 Values are an important concept in programming, and in Crystal it is no different.
 
 The main values in Crystal are strings, chars, integers, floats, and booleans. There are others, but these are more specific; these main values are called primitive types.

@@ -4,10 +4,6 @@ order: 1
 nextExample:
   - values
 ---
-
-import { Code } from 'astro-expressive-code/components'
-import { loadCode } from '../../utils/load-code'
-
 A Hello World in Crystal is simple, just use the `puts` method to print a string in the console.
 
 You can use the crystal compiler `crystal run` to run code directly, or compile and running with the `crystal build` command.
