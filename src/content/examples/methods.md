@@ -1,6 +1,6 @@
 ---
 title: Methods
-order: 10
+order: 9
 nextExample:
   - procs
 ---

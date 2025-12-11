@@ -1,6 +1,6 @@
 ---
 title: Exceptions
-order: 16
+order: 17
 nextExample:
   - custom-exceptions
 ---

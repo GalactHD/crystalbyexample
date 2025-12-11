@@ -1,6 +1,6 @@
 ---
 title: Hash Maps
-order: 9
+order: 8
 nextExample:
   - methods
 ---

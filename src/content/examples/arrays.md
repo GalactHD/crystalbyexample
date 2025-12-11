@@ -1,6 +1,6 @@
 ---
 title: Arrays
-order: 8
+order: 7
 nextExample:
   - hash-maps
 ---
