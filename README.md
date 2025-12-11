@@ -9,8 +9,25 @@
     </a> 
 </p>
 
+
 ## What is it?
 
-Crystal by Example is a small website designed to help people learn Crystal in an easy and intuitive way. It is fast to read and understand, making it suitable both for beginners and for experienced developers who want to explore new concepts.
+Crystal by Example is a small website designed to help people learn Crystal in an easy and intuitive way. Its content is fast to read and understand, making it suitable for beginners as well as experienced developers who want to explore new concepts.
 
-The website provides code examples along with short explanations of what each example does. All examples are organized in a logical order, allowing for a natural learning progression.
+The website provides code examples with short explanations of what each example does. All examples are organized in a logical order, allowing for a natural learning progression.
+
+---
+
+## Developing
+
+First, download [Node.js](https://nodejs.org) or [Bun](https://bun.com). Then, clone the repository and run the `install` command.
+
+Use either npm or Bun with the `dev` script and open your browser at `http://localhost:4321/`:
+
+```bash
+# Using npm
+npm run dev
+
+# Using Bun
+bun run dev
+```
