@@ -1,5 +1,5 @@
 ---
-title: Values
+title: Valores
 order: 2
 nextExample:
   - variables
@@ -18,7 +18,7 @@ puts 3.145 * 2
 ```
 
 ```
-$ crystal run values.cr
+$ crystal run valores.cr
 
 Meu texto
 ç
