@@ -1,6 +1,6 @@
 ---
 title: Channels
-order: 20
+order: 22
 isLast: true
 nextExample:
   - nothing

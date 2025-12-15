@@ -1,6 +1,6 @@
 ---
 title: Procs
-order: 10
+order: 12
 nextExample:
   - classes
 ---

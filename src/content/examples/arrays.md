@@ -2,7 +2,7 @@
 title: Arrays
 order: 7
 nextExample:
-  - hash-maps
+  - tuples
 ---
 Arrays are a data structure that hold ordered elements and organize them with zero-based indexing.
 

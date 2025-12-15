@@ -4,11 +4,14 @@ order: 3
 nextExample:
   - constants
 ---
-Variables is a way in programming that allows to store data, in Crystal, variables are straightfoward, only requires the name and value.
 
-And the language automatically infers the type.
+Variables are a way to store data in programming. In Crystal, declaring a variable is simple, you just need to give it a name and assign a value. 
 
-Crystal allows multi variables at once, and variables can hold other variable values.
+The language automatically infers the type of the variable based on the value you provide.
+
+You can also declare multiple variables at once, and a variable can store the value of another variable.
+
+Although Crystal performs type inference, it is a statically typed language, which means you can also explicitly specify the type of a variable. If you declare a type and try to assign a value of a different type, the compiler will produce an error.
 
 ```crystal
 name = "Carl"

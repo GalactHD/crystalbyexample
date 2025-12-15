@@ -1,6 +1,6 @@
 ---
 title: Custom Exceptions
-order: 18
+order: 20
 nextExample:
   - fibers
 ---

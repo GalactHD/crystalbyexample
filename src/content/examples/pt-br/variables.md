@@ -11,6 +11,8 @@ E a linguagem automaticamente infere os tipos.
 
 Crystal permite várias variáveis de uma vez, e uma variável pode guardar valores de outras variáveis.
 
+Crystal é uma linguagem com tipos estáticos, isso faz que seja possivel especificar tipos as variáveis, perceba-se que se adicionar um tipo, mas atribuir outro, ocorrerá um erro.
+
 ```crystal
 nome = "João"
 primeiro_nome, sobre_nome = nome, "Souza"
@@ -23,8 +25,8 @@ y = x * 2
 
 puts x + y
 
-r = true
-q = false
+r : Bool = true
+q : Bool = false
 
 puts r && q
 ```

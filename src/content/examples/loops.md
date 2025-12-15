@@ -4,6 +4,7 @@ order: 6
 nextExample:
   - arrays
 ---
+
 Loops, iterations, or repetition structures are a programming concept that allows a block of code to be repeated based on boolean conditions (true or false). They are part of the control flow in many programs.
 
 In Crystal, there are several ways to create loops, such as using `while`, `until`, `loop`, and `each`. Crystal does not have a `for` structure like other languages, but there are alternatives.
@@ -15,6 +16,8 @@ The `each` loop is mainly used with arrays.
 `loop` and `while` are similar, but `while` requires conditions to be true in order to run, whereas `loop` runs automatically.
 
 `next` is used to skip to the next iteration, and `break` stops the iteration.
+
+`times` is used for repeating a code n times.
 
 ```crystal
 arr = [1, 2, 3, 4]
@@ -59,6 +62,10 @@ while ab < 5
     break
   end
 end
+
+2.times do
+  puts "Repeating 2 times"
+end
 ```
 
 ```
@@ -73,4 +80,6 @@ $ crystal run loops.cr
 3
 2!
 3
+Repeating 2 times
+Repeating 2 times
 ```

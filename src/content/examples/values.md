@@ -6,7 +6,7 @@ nextExample:
 ---
 Values are an important concept in programming, and in Crystal it is no different.
 
-The main values in Crystal are strings, chars, integers, floats, and booleans. There are others, but these are more specific; these main values are called primitive types.
+The main values in Crystal are strings, chars, integers, floats, and booleans. There are others, but these are more specific these main values are called primitive types.
 
 ```crystal
 puts "My string"

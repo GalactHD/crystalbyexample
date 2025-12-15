@@ -1,6 +1,6 @@
 ---
 title: Structs
-order: 12
+order: 14
 nextExample:
   - modules
 ---

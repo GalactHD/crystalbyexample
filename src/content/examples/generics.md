@@ -1,6 +1,6 @@
 ---
 title: Generics
-order: 16
+order: 18
 nextExample:
   - exceptions
 ---

@@ -1,6 +1,6 @@
 ---
 title: Classes
-order: 11
+order: 13
 nextExample:
   - structs
 ---
