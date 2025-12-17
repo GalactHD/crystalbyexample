@@ -2,7 +2,7 @@
 title: Methods
 order: 10
 nextExample:
-  - procs
+  - blocks
 ---
 Methods (or functions) are a way to reuse code, avoiding the repetition of logic and consequently making programming simpler.
 
