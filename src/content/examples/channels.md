@@ -1,10 +1,10 @@
 ---
 title: Channels
 order: 22
-isLast: true
 nextExample:
-  - nothing
+  - json
 ---
+
 Channels in Crystal provide a safe and convenient way to send data between fibers without worrying about shared resources or race conditions.
 
 Channels are typed and implemented as a class, so you create them by specifying the type of data they will carry. Channels are generic, meaning they can send any type of data.
